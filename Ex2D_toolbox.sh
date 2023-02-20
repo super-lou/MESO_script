@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #SBATCH --job-name=Explore2_diagnostic
-#SBATCH --output=job.%j.out
-#SBATCH --error=job.%j.err 
+#SBATCH --output=/home/herautl/scratch/job.%j.out
+#SBATCH --error=/home/herautl/scratch/job.%j.err 
 #SBATCH --mail-user=louis.heraut@inrae.fr
 #SBATCH --mail-type=ALL
 
