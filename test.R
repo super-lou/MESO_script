@@ -1,11 +1,11 @@
-print("test")
+write("test", stdout())
 
 library("Rmpi")
 
 size = mpi.universe.size()
-print(size)
-print("")
+write(size, stdout())
+write("", stdout())
 
 mpi.spawn.Rslaves(nslaves=size-1)
 rank = mpi.comm.rank()
-print(rank)
+write(rank, stdout())
