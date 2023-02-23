@@ -17,4 +17,6 @@ module load cv-standard
 module load openmpi
 module load R/3.6.3
 
+rm job*err
+rm job*out
 mpirun -np 1 Rscript test.R
