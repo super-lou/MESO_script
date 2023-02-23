@@ -14,5 +14,7 @@
 
 module purge
 module load R/3.6.3
+module load cv-standard
+module load openmpi/psm2/gcc49/2.0.1
 
 srun --nodes $SLURM_JOB_NUM_NODES --ntasks-per-node $SLURM_NTASKS --cpus-per-task $SLURM_CPUS_PER_TASK Rscript test.R
