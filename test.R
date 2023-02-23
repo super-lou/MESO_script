@@ -1,11 +1,9 @@
-write("test", stdout())
+print("test")
 
-library("Rmpi")
+library(Rmpi)
+rank = mpi.comm.rank(comm=0)
+size = mpi.comm.size (comm=0)
+hostname = mpi.get.processor.name()
 
-size = mpi.universe.size()
-write(size, stdout())
-write("", stdout())
-
-mpi.spawn.Rslaves(nslaves=size-1)
-rank = mpi.comm.rank()
-write(rank, stdout())
+msg = paste0("Hello world from task ", rank, " of ", size, " on host ", hostname)
+print(msg)
