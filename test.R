@@ -1,8 +1,9 @@
-# Load the R MPI package if it is not already loaded.
-library("Rmpi")
-
+if (!is.loaded("mpi_initialize")) {
+    library("Rmpi")
+}
 
 ns <- mpi.universe.size() - 1
+print(ns)
 mpi.spawn.Rslaves(nslaves=ns)
 #
 # In case R exits unexpectedly, have it automatically clean up
